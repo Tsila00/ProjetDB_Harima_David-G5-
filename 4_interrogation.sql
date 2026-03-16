@@ -28,11 +28,6 @@ FROM ATHLETE
 GROUP BY id_club 
 HAVING COUNT(*) > 10;
 
--- 5. Récupérer les compétitions qui sont de niveau National ou International .
-SELECT nom_event, date_event, niv_compet 
-FROM COMPETITION 
-WHERE niv_compet IN ('National', 'International');
-
 
 --  6. Imbriquée avec EXISTS : Trouver les clubs qui ont au moins une femme parmi leurs licenciés.
 SELECT nom_club 
