@@ -82,9 +82,9 @@ Performance = (#id_licence, #id_comp, #id_epreuve, temps DECIMAL(15,2), vent DEC
 
 
 
-# Partie 2.5 : Scénario : Camille, Directrice d’une Ligue d'Athlétisme
+Partie 2.5 : Scénario : Camille, Directrice d’une Ligue d'Athlétisme
 
-### Septembre - La rentrée et l’inscription des licenciés 
+Septembre - La rentrée et l’inscription des licenciés 
 
 * **Requête 1** : Elle édite d'abord un registre propre de toutes les athlètes féminines, trié alphabétiquement, pour mettre à jour les dossiers de la fédération.
 * **Requête 2** : Pour faciliter la lecture des listings de rentrée, elle associe chaque athlète au nom clair de son club plutôt que de lire de simples identifiants numériques.
@@ -93,7 +93,7 @@ Performance = (#id_licence, #id_comp, #id_epreuve, temps DECIMAL(15,2), vent DEC
 * **Requête 5** : Allocation des subventions : La ligue verse une aide financière aux structures les plus dynamiques. Camille filtre donc les "gros" clubs, c'est-à-dire ceux qui ont déjà validé plus de 10 licences.
 * **Requête 6** : Enfin, pour décerner le label "Sport au Féminin", elle identifie la liste des clubs qui comptent au moins une femme parmi leurs licenciés.
 
-### Février à Mai - organisation des compétitions
+Février à Mai - organisation des compétitions
 
 * **Requête 7** : Inspection des diplômes : Avant de nommer les juges, elle vérifie la liste des niveaux de certification uniques qui existent actuellement dans sa base pour s'assurer que le référentiel est à jour.
 * **Requête 8** : Sécurisation de l'arbitrage : Un événement peut être annulé si un juge clé tombe malade. Camille identifie les rôles d'officiels qui comptent plus d'une personne, lui permettant de voir où elle a des remplaçants potentiels.
@@ -102,7 +102,7 @@ Performance = (#id_licence, #id_comp, #id_epreuve, temps DECIMAL(15,2), vent DEC
 * **Requête 11** : Optimisation des lieux : En regardant ces mêmes données sous un autre angle, elle isole les stades "fantômes" où absolument aucune compétition n'a encore été programmée, afin d'y relocaliser certains événements.
 * **Requête 12** : Règles d'homologation : En sprint, l'altitude joue un rôle. Camille liste l'altitude maximale des stades par ville, en isolant ceux situés à plus de 1000m, car cela peut influencer la validation de certains records régionaux.
 
-### Juillet - Les résultats sportifs et le bilan de fin de saison
+Juillet - Les résultats sportifs et le bilan de fin de saison
 
 * **Requête 13** : Filtre du haut niveau : Camille souhaite d'abord faire un rapport sur les événements de prestige. Elle isole uniquement les compétitions de niveau National ou International.
 * **Requête 14** : Le grand tableau de bord : Pour publier les résultats sur le site web de la ligue, elle rassemble toutes les données : le nom du sportif, l'épreuve, le temps réalisé et la compétition concernée.
