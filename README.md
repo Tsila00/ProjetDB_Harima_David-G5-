@@ -83,40 +83,44 @@ Performance = (#id_licence, #id_comp, #id_epreuve, temps DECIMAL(15,2), vent DEC
 
 
 
+# Scénario : Camille, Directrice d’une Ligue d'Athlétisme
 
-Partie 2.5 : Scénario : 
-Camille, Directrice d’une Ligue d'Athlétisme
+Ce document détaille le flux de travail annuel de Camille et les besoins d'extraction de données associés (Requêtes SQL).
 
+---
 
-Voici comment elle utilise la base de données, de la rentrée de septembre jusqu'aux bilans de fin d'année.
-Septembre - La rentrée et l’inscription des licenciés 
-En début de saison, Camille doit mettre de l'ordre dans la gestion administrative des clubs et des licenciés.
-•	Elle édite d'abord un registre propre de toutes les athlètes féminines, trié alphabétiquement, pour mettre à jour les dossiers de la fédération (Requête 1).
-•	Pour faciliter la lecture des listings de rentrée, elle associe chaque athlète au nom clair de son club plutôt que de lire de simples identifiants numériques (Requête 2).
-•	La fédération lance un programme pour la catégorie espoir (donc entre 2004 et 2006). Camille extrait immédiatement cette liste pour leur envoyer une convocation (Requête 3).
-•	Campagne de communication : Elle doit envoyer une newsletter générale. Elle cible les adresses e-mail des clubs contenant "asso" ou "club" pour s'assurer qu'elle n'oublie pas les structures associatives principales (Requête 4).
-•	Allocation des subventions : La ligue verse une aide financière aux structures les plus dynamiques. Camille filtre donc les "gros" clubs, c'est-à-dire ceux qui ont déjà validé plus de 10 licences (Requête 5).
-•	Enfin, pour décerner le label "Sport au Féminin", elle identifie la liste des clubs qui comptent au moins une femme parmi leurs licenciés (Requête 6).
+## 📅 Septembre : La rentrée et l’inscription des licenciés
+*Gestion administrative, mise à jour des dossiers et campagnes de communication.*
 
-Février à Mai - organisation des compétitions
-La saison sur piste commence. Camille doit gérer les infrastructures et les équipes d'arbitrage (les officiels).
-•	Inspection des diplômes : Avant de nommer les juges, elle vérifie la liste des niveaux de certification uniques qui existent actuellement dans sa base pour s'assurer que le référentiel est à jour (Requête 7).
-•	Sécurisation de l'arbitrage : Un événement peut être annulé si un juge clé tombe malade. Camille identifie les rôles d'officiels qui comptent plus d'une personne, lui permettant de voir où elle a des remplaçants potentiels (Requête 8).
-•	Focus sur l'événement majeur : Pour le grand "Meeting de Paris", elle génère la feuille de match exacte des officiels (nom, prénom, rôle) affectés spécifiquement à cette compétition (Requête 9).
-•	Planification des infrastructures : Elle fait un état des lieux de tous les stades de la région et affiche en face les compétitions prévues. Cela lui permet d'avoir une vue d'ensemble du calendrier (Requête 10).
-•	Optimisation des lieux : En regardant ces mêmes données sous un autre angle, elle isole les stades "fantômes" où absolument aucune compétition n'a encore été programmée, afin d'y relocaliser certains événements (Requête 11).
-•	Règles d'homologation : En sprint, l'altitude joue un rôle. Camille liste l'altitude maximale des stades par ville, en isolant ceux situés à plus de 1000m, car cela peut influencer la validation de certains records régionaux (Requête 12).
+* **Requête 1 :** Éditer un registre propre de toutes les athlètes féminines, trié par ordre alphabétique.
+* **Requête 2 :** Associer chaque athlète au nom clair de son club (jointure) au lieu des identifiants numériques.
+- [ ] **Requête 3 :** Extraire la liste des athlètes de la catégorie "Espoir" (nés entre 2004 et 2006) pour une convocation.
+- [ ] **Requête 4 :** Cibler les adresses e-mail des clubs contenant "asso" ou "club" pour la newsletter générale.
+- [ ] **Requête 5 :** Filtrer les "gros" clubs ayant validé plus de 10 licences pour l'allocation des subventions.
+- [ ] **Requête 6 :** Identifier les clubs comptant au moins une femme parmi leurs licenciés pour le label "Sport au Féminin".
 
-Juillet - Les résultats sportifs et le bilan de fin de saison
-Les compétitions sont terminées. L'heure est à l'analyse des performances et à la préparation de la cérémonie des récompenses.
-•	Filtre du haut niveau : Camille souhaite d'abord faire un rapport sur les événements de prestige. Elle isole uniquement les compétitions de niveau National ou International (Requête 13).
-•	Le grand tableau de bord : Pour publier les résultats sur le site web de la ligue, elle rassemble toutes les données : le nom du sportif, l'épreuve, le temps réalisé et la compétition concernée (Requête 14).
-•	Analyse de la vitesse : Pour évaluer le niveau global de ses sprinteurs, elle calcule le temps moyen réalisé par épreuve, en filtrant spécifiquement les courses (moyennes inférieures à 25 secondes) (Requête 15).
-•	Le livre des records : Pour l'édition de la brochure de fin d'année, elle extrait automatiquement le meilleur temps (le record absolu) enregistré lors de chaque compétition (Requête 16).
-•	sprinter de l'année : elle demande à la base de données d'identifier l'athlète ayant réalisé le temps le plus bas de toute la saison sur l'épreuve reine du 100m (Requête 17).
-•	Mise à l'honneur des coachs : Lors de la remise des médailles, il est crucial de citer les entraîneurs. Camille génère la liste liant le nom des athlètes primés à celui de leurs coachs respectifs (Requête 18).
-•	Taux de participation : Pour ses statistiques internes, elle crée la liste des athlètes "actifs", c'est-à-dire ceux ayant réalisé au moins une performance chronométrée dans l'année (Requête 19).
-•	À l'inverse, elle isole les athlètes "fantômes" qui ont pris une licence mais n'ont participé à aucune épreuve. Elle transmettra cette liste aux clubs pour comprendre pourquoi ces sportifs n'ont pas concouru (Requête 20).
+---
 
+## 👟 Février à Mai : Organisation des compétitions
+*Gestion des infrastructures, de la logistique et des corps d'arbitrage.*
 
+- [ ] **Requête 7 :** Vérifier la liste des niveaux de certification uniques des officiels pour mettre à jour le référentiel.
+- [ ] **Requête 8 :** Identifier les rôles d'officiels occupés par plus d'une personne (gestion des remplaçants).
+- [ ] **Requête 9 :** Générer la feuille de match du "Meeting de Paris" (Nom, Prénom, Rôle des officiels affectés).
+- [ ] **Requête 10 :** Afficher l'état des lieux des stades de la région avec les compétitions prévues en face.
+- [ ] **Requête 11 :** Isoler les stades "fantômes" (aucune compétition programmée) pour relocaliser des événements.
+- [ ] **Requête 12 :** Lister l'altitude maximale des stades par ville, en isolant ceux > 1000m (homologation des records).
 
+---
+
+## 🏆 Juillet : Résultats sportifs et bilan de fin de saison
+*Analyse des performances, statistiques et préparation des récompenses.*
+
+- [ ] **Requête 13 :** Isoler uniquement les compétitions de niveau "National" ou "International".
+- [ ] **Requête 14 :** Tableau de bord complet : Nom du sportif, épreuve, temps réalisé et nom de la compétition.
+- [ ] **Requête 15 :** Calculer le temps moyen par épreuve, uniquement pour les courses rapides (moyenne < 25s).
+- [ ] **Requête 16 :** Extraire le record absolu (meilleur temps) enregistré lors de chaque compétition.
+- [ ] **Requête 17 :** Identifier l'athlète ayant réalisé le meilleur temps de la saison sur l'épreuve du 100m.
+- [ ] **Requête 18 :** Générer la liste liant le nom des athlètes primés à celui de leurs coachs respectifs.
+- [ ] **Requête 19 :** Créer la liste des athlètes "actifs" (ayant réalisé au moins une performance chronométrée).
+- [ ] **Requête 20 :** Isoler les athlètes "fantômes" (licenciés mais sans aucune compétition enregistrée).
